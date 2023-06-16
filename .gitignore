@@ -1,52 +1,31 @@
-# Prerequisites
-*.d
+﻿using System;
+using System.Runtime.CompilerServices;
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+namespace taklif
+{
+    class Test
+    {
+        public static void Main()
+        {
+            Console.Write("please enter midterm score: ");
+            double x = Convert.ToInt32 (Console.ReadLine ());
+            Console.Write("please enter final score: ");
+            double y = Convert.ToInt32 (Console.ReadLine ());
+            Console.WriteLine("score = {0}",calc (x,y));
+            if (calc(x, y) >= 10)
+            {
+                Console.WriteLine("passed");
+            }
+            else
+            { 
+                Console.WriteLine("failed");
+            }
+        }
 
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+        private static double calc (double x, double y)
+        {
+            double result = 0.35 * x + 0.65 * y;
+            return result;
+        }
+    }
+}
